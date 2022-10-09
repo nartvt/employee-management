@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorMain" prefHeight="600.0" prefWidth="1200.0" stylesheets="@css/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uit.controller.ManagementController">
+    <AnchorPane fx:id="anchorAbout" layoutX="170.0" layoutY="165.0" prefHeight="436.0" prefWidth="629.0">
+        <Label layoutX="26.0" layoutY="112.0" prefHeight="69.0" prefWidth="153.0" text="Giảng Viên Hướng Dẫn:" textAlignment="CENTER">
+            <font>
+                <Font name="Arial" size="13.0" />
+            </font>
+        </Label>
+        <Label layoutX="173.0" layoutY="112.0" prefHeight="69.0" prefWidth="111.0" text="Tạ Việt Phương" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="26.0" layoutY="166.0" prefHeight="69.0" prefWidth="153.0" text="Nhóm Sinh Viên Thực Hiện:" textAlignment="CENTER" />
+        <Label layoutX="40.0" layoutY="271.0" prefHeight="35.0" prefWidth="186.0" text="4. Nguyễn Ngọc Thuý Hiền" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="40.0" layoutY="201.0" prefHeight="35.0" prefWidth="153.0" text="1. Lý Đức Trọng" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="40.0" layoutY="227.0" prefHeight="26.0" prefWidth="153.0" text="2. Trần Văn Tài" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="40.0" layoutY="251.0" prefHeight="26.0" prefWidth="153.0" text="3. Lý Phước Thọ" textAlignment="CENTER">
+            <font>
+                <Font name="Arial Bold" size="14.0" />
+            </font>
+        </Label>
+    </AnchorPane>
+    <AnchorPane fx:id="sliderBar" layoutX="-1.0" prefHeight="602.0" prefWidth="171.0" style="-fx-background-color: #0a4969;">
+        <VBox layoutY="102.0" prefHeight="484.0" prefWidth="183.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-12.0" AnchorPane.topAnchor="53.0">
+            <Button fx:id="btnGioiThieu" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickSidePanelAbout" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: #0a4969 #0a4969;" text="Giới Thiệu" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+                <graphic>
+                    <ImageView fx:id="imgGioiThieu" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@img/dash.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnNhanVien" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickSidePanelEmployee" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: #0a4969 #0a4969;" text="Nhân Viên" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+                <graphic>
+                    <ImageView fx:id="imgNhanVien" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 1;">
+                        <Image url="@img/human.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnPhongBan" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onClickSidePanelDepartment" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: #0a4969 #0a4969;" text="Phòng Ban" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+                <graphic>
+                    <ImageView fx:id="imgPhongBan" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@img/department.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+    </AnchorPane>
+    <AnchorPane fx:id="anchorNhanVien" layoutX="170.0" layoutY="165.0" prefHeight="436.0" prefWidth="629.0">
+        <TableView fx:id="tableViewEmployee" layoutY="9.0" onMouseClicked="#openModalInputEmployeeClickOnTable" prefHeight="389.0" prefWidth="1029.0">
+            <columns>
+                <TableColumn fx:id="tbTenNhanVien" prefWidth="117.0" text="Tên Nhân Viên" />
+                <TableColumn fx:id="tbIdentifier" prefWidth="129.0" text="CMND" />
+                <TableColumn fx:id="tbNgayVaoLam" prefWidth="129.0" text="Ngày Vào Làm" />
+                <TableColumn fx:id="tbPhongBan" prefWidth="129.0" text="Phòng Ban" />
+                <TableColumn fx:id="tbChucVu" prefWidth="129.0" text="Chức Vụ" />
+                <TableColumn fx:id="tbSoDienThoai" prefWidth="129.0" text="Số Điện Thoại" />
+                <TableColumn fx:id="tbQuocTich" prefWidth="129.0" text="Quốc Tịch" />
+            </columns>
+        </TableView>
+    </AnchorPane>
+
+    <AnchorPane fx:id="anchorDepartment" layoutX="170.0" layoutY="165.0" prefHeight="436.0" prefWidth="629.0">
+        <TableView fx:id="tableViewPhongBan" layoutY="9.0" onMouseClicked="#openModalInputDepartmentClickOnTable" prefHeight="389.0" prefWidth="1029.0">
+            <columns>
+                <TableColumn fx:id="tbTenPhong" prefWidth="117.0" text="Tên Phòng" />
+                <TableColumn fx:id="tbTruongPhong" prefWidth="129.0" text="Trưởng Phòng" />
+                <TableColumn fx:id="tbNgayThanhLap" prefWidth="129.0" text="Ngày Thành Lập" />
+            </columns>
+        </TableView>
+    </AnchorPane>
+    <Button fx:id="btnAddEmployee" layoutX="1083.0" layoutY="127.0" mnemonicParsing="false" onAction="#onAddEmployee" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #0d87e4#0d87e4;" text="Add" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+    <Label fx:id="nameOfScreen" layoutX="206.0" layoutY="14.0" prefHeight="133.0" prefWidth="861.0" />
+    <Button fx:id="previousPageBtn" layoutX="181.0" layoutY="567.0"
+            onAction="#onClickPreviousPage"
+            mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Prev" />
+    <Button fx:id="nextPageBtn" layoutX="1100.0" layoutY="567.0"
+            onAction="#onClickNextPage"
+            mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Next" />
+</AnchorPane>

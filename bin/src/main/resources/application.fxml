@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<BorderPane maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="400.0"
+            prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.uit.controller.SignInController">
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="432.0" style="-fx-background-color: #171717;"
+                    BorderPane.alignment="CENTER"
+                    onKeyPressed="#onEnterPassWord"
+        >
+            <children>
+                <ImageView fitHeight="74.0" fitWidth="83.0" layoutX="268.0" layoutY="25.0" style="-fx-opacity: 1;">
+                    <image>
+                        <Image url="@img/login_icon.png"/>
+                    </image>
+                </ImageView>
+                <Label layoutX="104.0" layoutY="161.0" text="UserName" textFill="#ffc900">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <Label layoutX="108.0" layoutY="228.0" text="Password" textFill="#ffc900">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="userName"
+                           layoutX="223.0"
+                           layoutY="155.0"
+                           prefHeight="38.0"
+                           prefWidth="221.0"
+                           promptText="User Name"
+                           onKeyPressed="#onEnterPassWord"/>
+
+                <PasswordField fx:id="password"
+                               layoutX="222.0"
+                               layoutY="222.0"
+                               prefHeight="38.0"
+                               prefWidth="223.0"
+                               promptText="Password"
+                               onKeyPressed="#onEnterPassWord"/>
+
+                <Button alignment="CENTER"
+                        contentDisplay="CENTER"
+                        layoutX="218.0"
+                        layoutY="283.0"
+                        mnemonicParsing="false"
+                        onAction="#onSignButtonClick"
+                        prefHeight="38.0"
+                        prefWidth="226.0"
+                        style="-fx-background-color: #ffc900;"
+                        text="SignIn"/>
+
+                <Label fx:id="failureLogin"
+                       alignment="CENTER"
+                       contentDisplay="CENTER"
+                       layoutX="223.0"
+                       layoutY="115.0"
+                       prefHeight="33.0"
+                       prefWidth="216.0"
+                       textFill="RED"/>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>

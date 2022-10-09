@@ -1,0 +1,12 @@
+
+#btnNhanVien:hover {
+    -fx-background-color: #FFFFFF;
+}
+
+#btnPhongBan:hover {
+    -fx-background-color: #FFFFFF;
+}
+
+#btnNhanVien:pressed {
+    -fx-background-color: #FFDAB9; /* maybe some other color */
+}
